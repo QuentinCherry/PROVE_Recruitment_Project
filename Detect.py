@@ -9,8 +9,9 @@ import math
 cam = {}
 cameraArmed = False # Mostly unused, but can be used to toggle image camera without restarting the script
 cam = cv2.VideoCapture(1) # Camera to use
-model = YOLO("yolov5s.pt") # Model to use
+model = YOLO("yolov5su.mlpackage") # Model to use
 model.overrides["imgsz"] = 1280 # Resolution to pass to YOLO, higher number = more compute cost but further vision range/accuracy
+
 
 horizontal_fov = 81 # Horizontal FOV of the camera, used to output theta angles
 vertical_fov = 51 # Vertical FOV of camera, used to output rho angles
@@ -19,11 +20,10 @@ vertical_pixels = 1080 # Vertical pixel count of camera
  
 
 # For the 3d renderer
-show_render = False
+show_render = True
 DEFAULT_DISTANCE = 10  # arbitrary scene units
 _scene = None
 _active_boxes = []
-
 
 
 # Entirely optional, could allow for a startup animation? Maybe PROVE logo?
