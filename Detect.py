@@ -8,7 +8,7 @@ import math
 
 cam = {}
 cameraArmed = False # Mostly unused, but can be used to toggle image camera without restarting the script
-cam = cv2.VideoCapture(1) # Camera to use
+cam = cv2.VideoCapture(0) # Camera to use
 model = YOLO("exp.pt") # Model to use
 model.overrides["imgsz"] = 1280 # Resolution to pass to YOLO, higher number = more compute cost but further vision range/accuracy
 
